@@ -14,7 +14,7 @@ export const services: Service[] = [
       'Limpeza de manutenção para deixar sua casa organizada, limpa e agradável no dia a dia.',
     image: 'limpeza-tradicional.png',
     imageAlt: 'Mão com luva turquesa limpando uma superfície com pano',
-    priceFrom: null,
+    priceFrom: 200,
   },
   {
     id: 'pesada',
@@ -23,7 +23,7 @@ export const services: Service[] = [
       'Limpeza profunda para ambientes que precisam de atenção especial, com cuidado nos detalhes.',
     image: 'limpeza-pesada.png',
     imageAlt: 'Mop turquesa limpando o piso',
-    priceFrom: null,
+    priceFrom: 300,
   },
   {
     id: 'pos-obra',
@@ -32,7 +32,7 @@ export const services: Service[] = [
       'Limpeza especializada para remover poeira e resíduos após construções e reformas.',
     image: 'limpeza-pos-obra.png',
     imageAlt: 'Capacete de obra amarelo sobre piso com resíduos',
-    priceFrom: null,
+    priceFrom: 500,
   },
   {
     id: 'pos-mudanca',
@@ -41,7 +41,7 @@ export const services: Service[] = [
       'Preparação do imóvel antes ou depois de uma mudança, com limpeza completa dos ambientes.',
     image: 'limpeza-pos-mudanca.png',
     imageAlt: 'Caixas de mudança e uma planta em um ambiente claro',
-    priceFrom: null,
+    priceFrom: 300,
   },
 ]
 

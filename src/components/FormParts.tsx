@@ -39,7 +39,7 @@ export function RadioGroup<T extends string>({
             onChange={() => onChange(o.value)}
             className="size-4 shrink-0 accent-teal"
           />
-          <span>{o.label}</span>
+          <span className="flex-1">{o.label}</span>
         </label>
       ))}
     </div>
