@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #003a70;
+  --color-navy-dark: #002a52;
+  --color-teal: #00b8bb;
+  --color-teal-dark: #00979a;
+  --color-teal-soft: #e3f7f7;
+  --color-mist: #d9dee3;
+  --color-cloud: #f3f6f9;
+  --color-ink: #33475b;
+
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+
+  --shadow-card: 0 8px 28px -12px rgb(0 58 112 / 0.22);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-teal to-teal-dark px-6 py-3 font-bold text-white shadow-card transition hover:-translate-y-0.5 hover:brightness-105 active:translate-y-0 disabled:cursor-not-allowed disabled:from-mist disabled:to-mist disabled:text-ink/60 disabled:shadow-none disabled:hover:translate-y-0;
+  }
+  .section-title {
+    @apply flex items-center justify-center gap-4 text-center text-2xl font-extrabold text-navy sm:text-3xl;
+  }
+  .section-title::before,
+  .section-title::after {
+    content: '';
+    @apply hidden h-0.5 max-w-64 flex-1 bg-gradient-to-r from-transparent to-teal sm:block;
+  }
+  .section-title::after {
+    @apply bg-gradient-to-l;
+  }
+  .option {
+    @apply flex cursor-pointer items-center gap-3 rounded-xl border border-mist bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:border-teal/60 has-[:checked]:border-teal has-[:checked]:bg-teal-soft has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-teal;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
