@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import type { Booking } from '../types/booking'
+import { asset } from '../utils/assets'
 import { isStepValid, missingFields } from '../utils/validation'
 import BookingSummary from './BookingSummary'
 import DateSelector from './DateSelector'
@@ -57,7 +58,14 @@ export default function BookingForm({ booking, update, step, setStep }: Props) {
               <p className="mt-3 hidden text-sm leading-relaxed text-ink lg:block">
                 Depois é só continuar pelo WhatsApp para finalizar seu agendamento com nossa equipe.
               </p>
-              <Sparkles className="absolute right-6 bottom-6 hidden size-10 text-teal/70 lg:block" aria-hidden="true" />
+              <img
+                src={asset('a_clean_high_quality_realistic_vector_3d_style_i.png')}
+                alt=""
+                width={1774}
+                height={887}
+                loading="lazy"
+                className="mt-6 hidden w-full lg:block"
+              />
             </div>
 
             <form className="p-4 sm:p-6" onSubmit={(e) => e.preventDefault()} noValidate>
