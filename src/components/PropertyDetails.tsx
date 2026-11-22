@@ -1,6 +1,7 @@
 import { propertyTypes, roomCounts } from '../config/services'
 import type { Booking } from '../types/booking'
 import { RadioGroup, StepHeader } from './FormParts'
+import NeighborhoodSelect from './NeighborhoodSelect'
 
 type Props = { booking: Booking; update: (patch: Partial<Booking>) => void }
 
@@ -50,20 +51,18 @@ export default function PropertyDetails({ booking, update }: Props) {
           />
         </div>
         <div>
-          <label htmlFor="bairro" className={sub}>
+          <label id="lbl-bairro" htmlFor="bairro" className={sub}>
             Bairro ou região
           </label>
-          <input
+          <NeighborhoodSelect
             id="bairro"
-            type="text"
+            labelId="lbl-bairro"
             value={booking.neighborhood}
-            onChange={(e) => update({ neighborhood: e.target.value })}
-            maxLength={60}
-            autoComplete="address-level3"
-            placeholder="Ex.: Savassi, Pampulha, Contagem…"
-            className="w-full rounded-xl border border-mist bg-white px-4 py-3 text-base text-navy placeholder:text-ink/50 focus:border-teal focus:outline-none focus-visible:outline-3 focus-visible:outline-teal sm:text-sm"
+            onChange={(v) => update({ neighborhood: v })}
           />
-          <p className="mt-1 text-xs text-ink/70">Não precisa informar o endereço completo.</p>
+          <p className="mt-1 text-xs text-ink/70">
+            Bairros de Belo Horizonte. Em outra cidade da Grande BH? Escolha “Região metropolitana”.
+          </p>
         </div>
       </div>
     </fieldset>

@@ -44,10 +44,10 @@ export default function BookingForm({ booking, update, step, setStep }: Props) {
   return (
     <section id="orcamento" className="bg-gradient-to-b from-white to-cloud py-14 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="overflow-hidden rounded-3xl bg-cloud/60 shadow-card ring-1 ring-mist/60">
+        <div className="rounded-3xl bg-cloud/60 shadow-card ring-1 ring-mist/60">
           <div className="grid lg:grid-cols-[17rem_1fr]">
             {/* Introdução */}
-            <div className="relative bg-gradient-to-br from-white to-teal-soft/60 p-6 sm:p-8">
+            <div className="relative rounded-t-3xl bg-gradient-to-br from-white to-teal-soft/60 p-6 sm:p-8 lg:rounded-r-none lg:rounded-l-3xl">
               <h2 className="text-2xl font-extrabold text-navy sm:text-3xl">
                 Solicite seu
                 <span className="block font-script text-4xl text-teal sm:text-[2.6rem]">orçamento online</span>
